@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BBIG Designs - Handcrafted Belt Buckles | Shopping Cart</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header Partial -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/img/placeholder-for-logo.png" alt="BBIG Designs Logo" height="40" class="me-2">
+          BBIG Designs
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shop/cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>  
+  <!-- Flash Messages -->
+  <div class="container mt-3">
+    
+  </div>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Breadcrumb Navigation -->
+<section class="py-3 bg-light">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Cart Header -->
+<section class="py-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold mb-md-0">Your Cart</h1>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="/shop" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i> Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Content -->
+<section class="py-4">
+  <div class="container">
+      <!-- Cart Table for desktop and tablet -->
+      <div class="card shadow-sm mb-4 d-none d-md-block">
+        <div class="card-body p-0">
+          <table class="table table-hover mb-0">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col" style="width: 15%;">Product</th>
+                <th scope="col" style="width: 40%;">Description</th>
+                <th scope="col" style="width: 15%;" class="text-center">Quantity</th>
+                <th scope="col" style="width: 15%;" class="text-end">Price</th>
+                <th scope="col" style="width: 15%;" class="text-end">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>
+                    <img src="/img/placeholder-product-3.jpg" alt="Semi-Custom Buckle" class="img-fluid rounded" style="max-width: 80px;">
+                  </td>
+                  <td>
+                    <h5 class="mb-1">Semi-Custom Buckle</h5>
+                    <p class="mb-1 text-muted small">Metal: Silver, Finish: Polished</p>
+                    <button class="btn btn-sm btn-link text-danger p-0 remove-item" data-id="1">
+                      <i class="fas fa-trash-alt me-1"></i> Remove
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <div class="quantity-control d-inline-flex">
+                      <button class="btn btn-sm btn-outline-secondary qty-decrease" data-id="1">-</button>
+                      <input type="number" class="form-control form-control-sm qty-input text-center mx-2" value="1" min="1" data-id="1" style="width: 50px;">
+                      <button class="btn btn-sm btn-outline-secondary qty-increase" data-id="1">+</button>
+                    </div>
+                  </td>
+                  <td class="text-end">$119.99</td>
+                  <td class="text-end fw-bold">$119.99</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="/img/placeholder-product-6.jpg" alt="Premium Belt" class="img-fluid rounded" style="max-width: 80px;">
+                  </td>
+                  <td>
+                    <h5 class="mb-1">Premium Belt</h5>
+                    <p class="mb-1 text-muted small">Color: Brown, Size: 36</p>
+                    <button class="btn btn-sm btn-link text-danger p-0 remove-item" data-id="2">
+                      <i class="fas fa-trash-alt me-1"></i> Remove
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <div class="quantity-control d-inline-flex">
+                      <button class="btn btn-sm btn-outline-secondary qty-decrease" data-id="2">-</button>
+                      <input type="number" class="form-control form-control-sm qty-input text-center mx-2" value="1" min="1" data-id="2" style="width: 50px;">
+                      <button class="btn btn-sm btn-outline-secondary qty-increase" data-id="2">+</button>
+                    </div>
+                  </td>
+                  <td class="text-end">$49.99</td>
+                  <td class="text-end fw-bold">$49.99</td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cart Cards for mobile -->
+      <div class="d-md-none">
+          <div class="card shadow-sm mb-3">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-4">
+                  <img src="/img/placeholder-product-3.jpg" alt="Semi-Custom Buckle" class="img-fluid rounded">
+                </div>
+                <div class="col-8">
+                  <h5 class="mb-1">Semi-Custom Buckle</h5>
+                  <p class="mb-1 text-muted small">Metal: Silver, Finish: Polished</p>
+                  <p class="mb-1">Price: <span class="fw-bold">$119.99</span></p>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <div class="quantity-control d-inline-flex">
+                      <button class="btn btn-sm btn-outline-secondary qty-decrease" data-id="1">-</button>
+                      <input type="number" class="form-control form-control-sm qty-input text-center mx-1" value="1" min="1" data-id="1" style="width: 40px;">
+                      <button class="btn btn-sm btn-outline-secondary qty-increase" data-id="1">+</button>
+                    </div>
+                    <button class="btn btn-sm btn-link text-danger p-0 remove-item" data-id="1">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </div>
+                  <p class="mt-2 mb-0">Total: <span class="fw-bold">$119.99</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card shadow-sm mb-3">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-4">
+                  <img src="/img/placeholder-product-6.jpg" alt="Premium Belt" class="img-fluid rounded">
+                </div>
+                <div class="col-8">
+                  <h5 class="mb-1">Premium Belt</h5>
+                  <p class="mb-1 text-muted small">Color: Brown, Size: 36</p>
+                  <p class="mb-1">Price: <span class="fw-bold">$49.99</span></p>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <div class="quantity-control d-inline-flex">
+                      <button class="btn btn-sm btn-outline-secondary qty-decrease" data-id="2">-</button>
+                      <input type="number" class="form-control form-control-sm qty-input text-center mx-1" value="1" min="1" data-id="2" style="width: 40px;">
+                      <button class="btn btn-sm btn-outline-secondary qty-increase" data-id="2">+</button>
+                    </div>
+                    <button class="btn btn-sm btn-link text-danger p-0 remove-item" data-id="2">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </div>
+                  <p class="mt-2 mb-0">Total: <span class="fw-bold">$49.99</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <!-- Order Summary and Checkout -->
+      <div class="row mt-4">
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <!-- Promo Code -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Have a promo code?</h5>
+              <div class="input-group">
+                <input type="text" class="form-control" id="promoCode" placeholder="Enter promo code">
+                <button class="btn btn-secondary" type="button" id="applyPromo">Apply</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Special Instructions -->
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h5 class="card-title">Special Instructions</h5>
+              <textarea class="form-control" id="specialInstructions" rows="3" placeholder="Add any special instructions or notes about your order"></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-light">
+              <h5 class="mb-0">Order Summary</h5>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal</span>
+                <span class="fw-bold" id="cartSubtotal">$169.98</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Shipping</span>
+                <span id="shippingCost">
+                    <span class="text-success">Free</span>
+                </span>
+              </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Estimated Tax</span>
+                  <span id="taxAmount">$13.60</span>
+                </div>
+              <hr>
+              <div class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Estimated Total</span>
+                <span class="fw-bold fs-5" id="orderTotal">$183.58</span>
+              </div>
+              <div class="d-grid gap-2">
+                <a href="/checkout" class="btn btn-primary btn-lg">Proceed to Checkout</a>
+                <a href="/shop" class="btn btn-outline-secondary">Continue Shopping</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Secure Checkout Info -->
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h5 class="card-title">Secure Checkout</h5>
+              <p class="card-text small mb-2">We use secure payment processing by Stripe.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <i class="fab fa-cc-visa fa-2x me-2 text-secondary"></i>
+                  <i class="fab fa-cc-mastercard fa-2x me-2 text-secondary"></i>
+                  <i class="fab fa-cc-amex fa-2x me-2 text-secondary"></i>
+                  <i class="fab fa-cc-discover fa-2x text-secondary"></i>
+                </div>
+                <div>
+                  <i class="fas fa-lock fa-2x text-success"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- Recently Viewed Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="text-center mb-4">Recently Viewed</h3>
+    <div class="row">
+        <!-- Placeholder recently viewed products if no dynamic content yet -->
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-4.jpg" class="card-img-top product-img" alt="Custom Bag Tag">
+            <div class="card-body">
+              <h5 class="card-title">Custom Bag Tag</h5>
+              <p class="card-text">Personalized metal bag tags for golf clubs and events.</p>
+              <p class="card-text text-secondary fw-bold">$29.99</p>
+              <a href="/shop/product/4" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-5.jpg" class="card-img-top product-img" alt="Divot Tool">
+            <div class="card-body">
+              <h5 class="card-title">Divot Repair Tool</h5>
+              <p class="card-text">Custom metal divot repair tool with magnetic ball marker.</p>
+              <p class="card-text text-secondary fw-bold">$24.99</p>
+              <a href="/shop/product/5" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-7.jpg" class="card-img-top product-img" alt="Challenge Coin">
+            <div class="card-body">
+              <h5 class="card-title">Challenge Coin</h5>
+              <p class="card-text">Custom metal challenge coins for events and fundraisers.</p>
+              <p class="card-text text-secondary fw-bold">$19.99</p>
+              <a href="/shop/product/7" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-2.jpg" class="card-img-top product-img" alt="Tournament Package">
+            <div class="card-body">
+              <h5 class="card-title">Tournament Package</h5>
+              <p class="card-text">Custom buckles for your golf tournament with your event logo.</p>
+              <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              <a href="/shop/product/2" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cart JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Quantity controls
+    const qtyDecreaseButtons = document.querySelectorAll('.qty-decrease');
+    const qtyIncreaseButtons = document.querySelectorAll('.qty-increase');
+    const qtyInputs = document.querySelectorAll('.qty-input');
+    const removeButtons = document.querySelectorAll('.remove-item');
+    
+    // Decrease quantity
+    qtyDecreaseButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const inputElement = document.querySelector(`.qty-input[data-id="${id}"]`);
+        let currentValue = parseInt(inputElement.value);
+        
+        if (currentValue > 1) {
+          currentValue--;
+          inputElement.value = currentValue;
+          updateCartItem(id, currentValue);
+        }
+      });
+    });
+    
+    // Increase quantity
+    qtyIncreaseButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const inputElement = document.querySelector(`.qty-input[data-id="${id}"]`);
+        let currentValue = parseInt(inputElement.value);
+        
+        currentValue++;
+        inputElement.value = currentValue;
+        updateCartItem(id, currentValue);
+      });
+    });
+    
+    // Input quantity change
+    qtyInputs.forEach(input => {
+      input.addEventListener('change', function() {
+        const id = this.getAttribute('data-id');
+        let currentValue = parseInt(this.value);
+        
+        if (isNaN(currentValue) || currentValue < 1) {
+          currentValue = 1;
+          this.value = 1;
+        }
+        
+        updateCartItem(id, currentValue);
+      });
+    });
+    
+    // Remove item
+    removeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        removeCartItem(id);
+      });
+    });
+    
+    // Apply promo code
+    const applyPromoButton = document.getElementById('applyPromo');
+    if (applyPromoButton) {
+      applyPromoButton.addEventListener('click', function() {
+        const promoCode = document.getElementById('promoCode').value.trim();
+        
+        if (promoCode) {
+          // In a real implementation, you'd verify the promo code via AJAX
+          // For now, we'll simulate a successful promo code application
+          
+          // Show a success message
+          const promoInput = document.getElementById('promoCode');
+          promoInput.parentElement.innerHTML = `
+            <div class="alert alert-success mb-0">
+              <i class="fas fa-check-circle me-2"></i> Promo code "${promoCode}" applied successfully! 10% discount added.
+            </div>
+          `;
+          
+          // Update order summary with discount
+          const subtotalElement = document.getElementById('cartSubtotal');
+          const totalElement = document.getElementById('orderTotal');
+          
+          if (subtotalElement && totalElement) {
+            const subtotal = parseFloat(subtotalElement.textContent.replace(', ''));
+            const discount = subtotal * 0.1;
+            
+            // Add discount line if it doesn't exist
+            const orderSummary = totalElement.closest('.card-body');
+            if (orderSummary && !document.getElementById('discountAmount')) {
+              const discountHTML = `
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Discount</span>
+                  <span class="text-success" id="discountAmount">-${discount.toFixed(2)}</span>
+                </div>
+              `;
+              
+              // Insert the discount before the horizontal rule
+              const hr = orderSummary.querySelector('hr');
+              if (hr) {
+                hr.insertAdjacentHTML('beforebegin', discountHTML);
+              }
+            } else if (document.getElementById('discountAmount')) {
+              document.getElementById('discountAmount').textContent = `-${discount.toFixed(2)}`;
+            }
+            
+            // Update total
+            const newTotal = subtotal - discount + 
+              (document.getElementById('shippingCost') && document.getElementById('shippingCost').textContent !== 'Free' ? 
+                parseFloat(document.getElementById('shippingCost').textContent.replace(', '')) : 0) +
+              (document.getElementById('taxAmount') ? 
+                parseFloat(document.getElementById('taxAmount').textContent.replace(', '')) : 0);
+            
+            totalElement.textContent = `${newTotal.toFixed(2)}`;
+          }
+        }
+      });
+    }
+    
+    // Function to update cart item (simulated)
+    function updateCartItem(id, quantity) {
+      // In a real implementation, you'd send an AJAX request to update the cart
+      console.log(`Update item ${id} to quantity ${quantity}`);
+      
+      // Simulate updating the item total and cart totals
+      const itemRow = document.querySelector(`tr:has(button[data-id="${id}"]), .card:has(button[data-id="${id}"])`);
+      
+      if (itemRow) {
+        const priceElement = itemRow.querySelector('td:nth-child(4), p:contains("Price:")');
+        const totalElement = itemRow.querySelector('td:nth-child(5), p:contains("Total:")');
+        
+        if (priceElement && totalElement) {
+          const price = parseFloat(priceElement.textContent.replace(', ''));
+          const newTotal = price * quantity;
+          
+          // Update the item total
+          totalElement.textContent = `${newTotal.toFixed(2)}`;
+          
+          // Update cart totals
+          updateCartTotals();
+        }
+      }
+    }
+    
+    // Function to remove cart item (simulated)
+    function removeCartItem(id) {
+      // In a real implementation, you'd send an AJAX request to remove the item
+      console.log(`Remove item ${id}`);
+      
+      // Simulate removing the item from the DOM
+      const itemRowDesktop = document.querySelector(`tr:has(button[data-id="${id}"])`);
+      const itemCardMobile = document.querySelector(`.card:has(button[data-id="${id}"])`);
+      
+      if (itemRowDesktop) {
+        itemRowDesktop.remove();
+      }
+      
+      if (itemCardMobile) {
+        itemCardMobile.remove();
+      }
+      
+      // Update cart totals
+      updateCartTotals();
+      
+      // Check if cart is now empty
+      const remainingItems = document.querySelectorAll('tr:has(.remove-item), .card:has(.remove-item)');
+      
+      if (remainingItems.length === 0) {
+        // Reload page to show empty cart state
+        window.location.reload();
+      }
+    }
+    
+    // Function to update cart totals (simulated)
+    function updateCartTotals() {
+      // Calculate new subtotal from visible items
+      let subtotal = 0;
+      
+      // Get all item totals from desktop view
+      document.querySelectorAll('tr td:nth-child(5)').forEach(element => {
+        subtotal += parseFloat(element.textContent.replace(', ''));
+      });
+      
+      // If no desktop items, try mobile view
+      if (subtotal === 0) {
+        document.querySelectorAll('.card p:contains("Total:")').forEach(element => {
+          subtotal += parseFloat(element.textContent.replace('Total: , ''));
+        });
+      }
+      
+      // Update subtotal
+      const subtotalElement = document.getElementById('cartSubtotal');
+      if (subtotalElement) {
+        subtotalElement.textContent = `${subtotal.toFixed(2)}`;
+      }
+      
+      // Calculate other components
+      const shipping = document.getElementById('shippingCost') && 
+        document.getElementById('shippingCost').textContent !== 'Free' ? 
+        parseFloat(document.getElementById('shippingCost').textContent.replace(', '')) : 0;
+      
+      const discount = document.getElementById('discountAmount') ? 
+        parseFloat(document.getElementById('discountAmount').textContent.replace('-, '')) : 0;
+      
+      const tax = document.getElementById('taxAmount') ? 
+        parseFloat(document.getElementById('taxAmount').textContent.replace(', '')) : 0;
+      
+      // Update total
+      const total = subtotal + shipping - discount + tax;
+      const totalElement = document.getElementById('orderTotal');
+      
+      if (totalElement) {
+        totalElement.textContent = `${total.toFixed(2)}`;
+      }
+      
+      // Update shipping (free for orders over $100)
+      const shippingElement = document.getElementById('shippingCost');
+      if (shippingElement && subtotal >= 100) {
+        shippingElement.innerHTML = '<span class="text-success">Free</span>';
+      } else if (shippingElement && subtotal < 100) {
+        shippingElement.textContent = '$9.95';
+      }
+    }
+  });
+</script>
+  </main>
+  
+  <!-- Footer Partial -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>BBIG Designs</h5>
+          <p>100% handcrafted belt buckles made in Colorado. Quality materials with unmatched craftsmanship.</p>
+          <p>
+            <a href="https://facebook.com" class="text-white me-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="text-white me-2" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://pinterest.com" class="text-white me-2" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <address>
+            <p><i class="fas fa-map-marker-alt me-2"></i> PO Box 631546<br>Littleton, CO 80163</p>
+            <p><i class="fas fa-phone me-2"></i> Garrett: 303-888-5067<br>Greg: 720-514-1610</p>
+            <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@bbigdesigns.com" class="text-white">info@bbigdesigns.com</a></p>
+          </address>
+        </div>
+        <div class="col-md-4">
+          <h5>Shop & Inquire</h5>
+          <ul class="list-unstyled">
+            <li><a href="/shop/custom-golf-buckles" class="text-white">Custom Golf Buckles</a></li>
+            <li><a href="/shop/custom-buckle-packages" class="text-white">Custom Buckle Packages</a></li>
+            <li><a href="/shop/tournament-packages" class="text-white">Tournament Packages</a></li>
+            <li><a href="/shop/semi-custom-buckle-packages" class="text-white">Semi-Custom Buckle Packages</a></li>
+            <li><a href="/shop/semi-custom-bag-tags" class="text-white">Semi-Custom Bag Tags</a></li>
+            <li><a href="/shop/divot-repair-tools" class="text-white">Divot Repair Tools</a></li>
+            <li><a href="/shop/belts" class="text-white">Belts</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy;  BBIG Designs. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p><a href="/privacy-policy" class="text-white">Privacy Policy</a> | <a href="/terms-of-service" class="text-white">Terms of Service</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

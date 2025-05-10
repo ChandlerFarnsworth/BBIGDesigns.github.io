@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BBIG Designs - Handcrafted Belt Buckles | Custom Belt Buckle | Shop</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header Partial -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/img/placeholder-for-logo.png" alt="BBIG Designs Logo" height="40" class="me-2">
+          BBIG Designs
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shop/cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>  
+  <!-- Flash Messages -->
+  <div class="container mt-3">
+    
+  </div>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Breadcrumb Navigation -->
+<section class="py-3 bg-light">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+        <li class="breadcrumb-item"><a href="/shop/custom-buckle-packages">Custom Buckles</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Custom Belt Buckle</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Product Detail Main Section -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Product Images -->
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <div class="product-images">
+          <div class="main-image mb-3">
+            <img src="/img/placeholder-product-detail-1.jpg" id="mainProductImage" class="img-fluid rounded shadow" alt="Custom Belt Buckle">
+          </div>
+          <div class="row thumbnail-gallery">
+              <div class="col-3 mb-3">
+                <img src="/img/placeholder-product-detail-1.jpg" class="img-fluid rounded shadow thumbnail-image" alt="Custom Belt Buckle view" onclick="changeMainImage(this.src)">
+              </div>
+              <div class="col-3 mb-3">
+                <img src="/img/placeholder-product-detail-2.jpg" class="img-fluid rounded shadow thumbnail-image" alt="Custom Belt Buckle view" onclick="changeMainImage(this.src)">
+              </div>
+              <div class="col-3 mb-3">
+                <img src="/img/placeholder-product-detail-3.jpg" class="img-fluid rounded shadow thumbnail-image" alt="Custom Belt Buckle view" onclick="changeMainImage(this.src)">
+              </div>
+              <div class="col-3 mb-3">
+                <img src="/img/placeholder-product-detail-4.jpg" class="img-fluid rounded shadow thumbnail-image" alt="Custom Belt Buckle view" onclick="changeMainImage(this.src)">
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Product Info -->
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">Custom Belt Buckle</h1>
+        
+          <h3 class="text-secondary mb-4">$119.99</h3>
+        
+        <div class="mb-4">
+          <h5 class="mb-3">Description</h5>
+          <p>Handcrafted custom belt buckle made with premium materials.</p>
+        </div>
+        
+        <!-- Features -->
+        <div class="mb-4">
+          <h5 class="mb-3">Features</h5>
+          <ul class="list-unstyled">
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i> 100% handcrafted with premium materials</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Unique signature number on each piece</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Lifetime guarantee</li>
+              <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Made in Colorado, USA</li>
+          </ul>
+        </div>
+        
+        <!-- Options -->
+        <div class="mb-4">
+          <h5 class="mb-3">Options</h5>
+          
+            <div class="mb-3">
+              <label for="metalType" class="form-label">Metal Type</label>
+              <select class="form-select" id="metalType" name="metalType">
+                <option value="silver">Silver</option>
+                <option value="brass">Brass</option>
+                <option value="nickel">Nickel</option>
+                <option value="copper">Copper</option>
+              </select>
+            </div>
+            
+            <div class="mb-3">
+              <label for="finishType" class="form-label">Finish Type</label>
+              <select class="form-select" id="finishType" name="finishType">
+                <option value="polished">Polished</option>
+                <option value="brushed">Brushed</option>
+                <option value="antique">Antique</option>
+              </select>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="mb-4">
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary btn-lg" id="addToCartBtn"><i class="fas fa-shopping-cart me-2"></i> Add to Cart</button>
+                <button class="btn btn-outline-secondary btn-lg" id="requestQuoteBtn"><i class="fas fa-envelope me-2"></i> Request Information</button>
+              </div>
+        </div>
+        
+        <!-- Product Benefits -->
+        <div class="card border-0 bg-light p-3 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-shipping-fast text-secondary fa-2x me-3"></i>
+            <div>
+              <h5 class="mb-0">Free Shipping</h5>
+              <p class="mb-0 small">On orders over $100</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <i class="fas fa-shield-alt text-secondary fa-2x me-3"></i>
+            <div>
+              <h5 class="mb-0">Lifetime Guarantee</h5>
+              <p class="mb-0 small">100% satisfaction guaranteed</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-medal text-secondary fa-2x me-3"></i>
+            <div>
+              <h5 class="mb-0">Made in USA</h5>
+              <p class="mb-0 small">Handcrafted in Colorado</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Share -->
+        <div class="social-share">
+          <h5 class="mb-3">Share This Product</h5>
+          <div class="d-flex">
+            <a href="#" class="me-3 text-secondary" onclick="shareOnFacebook()"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="#" class="me-3 text-secondary" onclick="shareOnTwitter()"><i class="fab fa-twitter fa-lg"></i></a>
+            <a href="#" class="me-3 text-secondary" onclick="shareOnPinterest()"><i class="fab fa-pinterest-p fa-lg"></i></a>
+            <a href="#" class="me-3 text-secondary" onclick="shareByEmail()"><i class="fas fa-envelope fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Details Tabs -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="nav nav-tabs mb-4" id="productTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details" type="button" role="tab" aria-controls="details" aria-selected="true">Details</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">Specifications</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="care-tab" data-bs-toggle="tab" data-bs-target="#care" type="button" role="tab" aria-controls="care" aria-selected="false">Care Instructions</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Reviews</button>
+          </li>
+        </ul>
+        
+        <div class="tab-content" id="productTabsContent">
+          <!-- Details Tab -->
+          <div class="tab-pane fade show active" id="details" role="tabpanel" aria-labelledby="details-tab">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4">
+                <h3 class="mb-4">Product Details</h3>
+                <p>Our handcrafted belt buckles represent the pinnacle of craftsmanship and attention to detail. Each buckle is meticulously created through a multi-step process that begins with premium metal sheets and ends with a one-of-a-kind piece of wearable art.</p>
+                <p>The process starts with two sheets of solid metal. One piece is cut by hand with a jeweler's saw to create the intricate design elements. Both pieces are brought together through a combination of multiple, arduous steps that include countless hours of polishing, sandpapering, texturing, wire brushing, and soldering; as well as adding resins, colors, metals, pearlescence, and/or hardening agents; all in a consistently controlled atmosphere of temperature and humidity.</p>
+                <p>The finished product is brilliant and comes with a lifetime guarantee that reminds you of just how timeless your one-of-a-kind buckle will be. Each buckle receives a unique signature number, making it truly one-of-a-kind.</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Specifications Tab -->
+          <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4">
+                <h3 class="mb-4">Product Specifications</h3>
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th scope="row" style="width: 30%;">Dimensions</th>
+                      <td>Approximately 3.5" × 2.5" (standard size, custom sizes available)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Materials</th>
+                      <td>Silver, Nickel, Brass, Copper (as selected)</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Finish Options</th>
+                      <td>Polished, Brushed, Antique</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Belt Compatibility</th>
+                      <td>Fits standard 1.5" leather belts</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Production Time</th>
+                      <td>3-4 weeks from design approval</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Care Instructions Tab -->
+          <div class="tab-pane fade" id="care" role="tabpanel" aria-labelledby="care-tab">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4">
+                <h3 class="mb-4">Care Instructions</h3>
+                <h5>General Care</h5>
+                <p>Your BBIG Designs belt buckle is crafted to last a lifetime with proper care. Here are some guidelines to keep your buckle looking its best:</p>
+                <h5>Cleaning</h5>
+                <ul>
+                  <li>Gently wipe your buckle with a soft, dry cloth after wearing to remove any dust or fingerprints.</li>
+                  <li>For deeper cleaning, use a mild soap and warm water solution with a soft cloth. Dry thoroughly after cleaning.</li>
+                  <li>Avoid using harsh chemicals, abrasive cleaners, or polishing compounds that could damage the finish or enamel work.</li>
+                </ul>
+                <h5>Storage</h5>
+                <ul>
+                  <li>Store your buckle in a cool, dry place away from direct sunlight.</li>
+                  <li>Consider keeping it in a soft cloth pouch or the original packaging when not in use.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Reviews Tab -->
+          <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+            <div class="card border-0 shadow">
+              <div class="card-body p-4">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <h3 class="mb-0">Customer Reviews</h3>
+                  <button class="btn btn-primary" id="writeReviewBtn"><i class="fas fa-pen me-2"></i> Write a Review</button>
+                </div>
+                
+                <div class="mb-4">
+                  <div class="d-flex align-items-center">
+                    <div class="me-3">
+                      <span class="display-4 fw-bold">4.8</span>
+                      <span class="text-muted">/5</span>
+                    </div>
+                    <div>
+                      <div class="mb-1">
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star text-warning"></i>
+                        <i class="fas fa-star-half-alt text-warning"></i>
+                      </div>
+                      <p class="mb-0">Based on 24 reviews</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <hr>
+                
+                <!-- Sample Reviews -->
+                <div class="review-item mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0">Exceptional Craftsmanship</h5>
+                    <div>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                    </div>
+                  </div>
+                  <p class="text-muted mb-2">By John D. on January 15, 2025</p>
+                  <p class="mb-3">The attention to detail on my custom buckle is incredible. It's exactly what I wanted and more. The quality is outstanding, and it's already become a conversation piece whenever I wear it.</p>
+                  <hr>
+                </div>
+                
+                <div class="review-item mb-4">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="mb-0">Perfect Tournament Gift</h5>
+                    <div>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                      <i class="fas fa-star text-warning"></i>
+                    </div>
+                  </div>
+                  <p class="text-muted mb-2">By Sarah M. on February 3, 2025</p>
+                  <p class="mb-3">We ordered these buckles as prizes for our charity golf tournament, and they were a huge hit! The quality is exceptional, and the team at BBIG Designs was great to work with throughout the process.</p>
+                  <div class="bg-light p-3 rounded">
+                    <p class="mb-1"><strong>Response from BBIG Designs:</strong></p>
+                    <p class="mb-0">Thank you for your kind words, Sarah! We're thrilled that the tournament buckles were a success and look forward to working with you on future events.</p>
+                  </div>
+                  <hr>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Related Products -->
+<section class="py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="display-5 fw-bold">You May Also Like</h2>
+        <p class="lead">Explore these related products</p>
+      </div>
+    </div>
+    
+    <div class="row">
+        <!-- Placeholder related products -->
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-related-1.jpg" class="card-img-top product-img" alt="Related Product 1">
+            <div class="card-body">
+              <h5 class="card-title">Custom Logo Buckle</h5>
+              <p class="card-text">Handcrafted custom logo buckle with your design.</p>
+              <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              <a href="/shop/product/related1" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-related-2.jpg" class="card-img-top product-img" alt="Related Product 2">
+            <div class="card-body">
+              <h5 class="card-title">Premium Belt</h5>
+              <p class="card-text">High-quality leather belt to pair with your buckle.</p>
+              <p class="card-text text-secondary fw-bold">$49.99</p>
+              <a href="/shop/product/related2" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-related-3.jpg" class="card-img-top product-img" alt="Related Product 3">
+            <div class="card-body">
+              <h5 class="card-title">Custom Bag Tag</h5>
+              <p class="card-text">Matching bag tag with your custom design.</p>
+              <p class="card-text text-secondary fw-bold">$29.99</p>
+              <a href="/shop/product/related3" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-related-4.jpg" class="card-img-top product-img" alt="Related Product 4">
+            <div class="card-body">
+              <h5 class="card-title">Gift Package</h5>
+              <p class="card-text">Complete set with buckle, belt, and accessories.</p>
+              <p class="card-text text-secondary fw-bold">$179.99</p>
+              <a href="/shop/product/related4" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product Request Modal -->
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-labelledby="quoteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="quoteModalLabel">Request Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="quoteForm">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="quoteName" class="form-label">Your Name *</label>
+              <input type="text" class="form-control" id="quoteName" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="quoteEmail" class="form-label">Email Address *</label>
+              <input type="email" class="form-control" id="quoteEmail" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="quoteMessage" class="form-label">Message *</label>
+            <textarea class="form-control" id="quoteMessage" rows="4" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="quoteAttachment" class="form-label">Attach Logo or Design (Optional)</label>
+            <input class="form-control" type="file" id="quoteAttachment">
+            <div class="form-text">Max file size: 5MB. Supported formats: JPG, PNG, PDF, AI</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="submitQuoteBtn">Send Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Product Functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Change main product image when thumbnail is clicked
+    function changeMainImage(src) {
+      document.getElementById('mainProductImage').src = src;
+    }
+    window.changeMainImage = changeMainImage;
+    
+    // Add to Cart functionality
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    if (addToCartBtn) {
+      addToCartBtn.addEventListener('click', function() {
+        const productId = window.location.pathname.split('/').pop();
+        const options = {};
+        document.querySelectorAll('select[id]').forEach(select => {
+          options[select.id] = select.value;
+        });
+        
+        // Show confirmation toast
+        const toast = new bootstrap.Toast(document.createElement('div'));
+        toast._element.classList.add('toast', 'show', 'position-fixed', 'bottom-0', 'end-0', 'm-3');
+        toast._element.setAttribute('role', 'alert');
+        toast._element.innerHTML = `
+          <div class="toast-header bg-success text-white">
+            <strong class="me-auto">Added to Cart</strong>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            Product has been added to your cart.
+            <div class="mt-2">
+              <a href="/shop/cart" class="btn btn-sm btn-primary">View Cart</a>
+              <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="toast">Continue Shopping</button>
+            </div>
+          </div>
+        `;
+        document.body.appendChild(toast._element);
+        toast.show();
+        
+        // Update cart count in header
+        const cartCount = document.querySelector('.cart-count');
+        if (cartCount) {
+          cartCount.textContent = parseInt(cartCount.textContent || '0') + 1;
+        }
+      });
+    }
+    
+    // Request Quote Modal
+    const requestQuoteBtn = document.getElementById('requestQuoteBtn');
+    const quoteModal = new bootstrap.Modal(document.getElementById('quoteModal'));
+    
+    if (requestQuoteBtn) {
+      requestQuoteBtn.addEventListener('click', function() {
+        quoteModal.show();
+      });
+    }
+    
+    // Submit Quote Form
+    const submitQuoteBtn = document.getElementById('submitQuoteBtn');
+    if (submitQuoteBtn) {
+      submitQuoteBtn.addEventListener('click', function() {
+        // Validate form
+        const quoteForm = document.getElementById('quoteForm');
+        if (quoteForm.checkValidity()) {
+          quoteModal.hide();
+          
+          // Show success alert
+          const alertDiv = document.createElement('div');
+          alertDiv.classList.add('alert', 'alert-success', 'alert-dismissible', 'fade', 'show', 'mt-3');
+          alertDiv.innerHTML = `
+            <strong>Thank you!</strong> Your request has been submitted. We'll be in touch shortly.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          `;
+          document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.container').firstChild);
+          
+          // Reset form
+          quoteForm.reset();
+        } else {
+          quoteForm.reportValidity();
+        }
+      });
+    }
+    
+    // Social Share Functions
+    window.shareOnFacebook = function() {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}&t=${title}`, '_blank');
+    };
+    
+    window.shareOnTwitter = function() {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+    };
+    
+    window.shareOnPinterest = function() {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      const image = encodeURIComponent(document.getElementById('mainProductImage').src);
+      window.open(`https://pinterest.com/pin/create/button/?url=${url}&media=${image}&description=${title}`, '_blank');
+    };
+    
+    window.shareByEmail = function() {
+      const url = window.location.href;
+      const title = document.title;
+      const subject = encodeURIComponent(`Check out this product: ${title}`);
+      const body = encodeURIComponent(`I thought you might be interested in this: ${title}\n\n${url}`);
+      window.location.href = `mailto:?subject=${subject}&body=${body}`;
+    };
+  });
+</script>
+  </main>
+  
+  <!-- Footer Partial -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>BBIG Designs</h5>
+          <p>100% handcrafted belt buckles made in Colorado. Quality materials with unmatched craftsmanship.</p>
+          <p>
+            <a href="https://facebook.com" class="text-white me-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="text-white me-2" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://pinterest.com" class="text-white me-2" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <address>
+            <p><i class="fas fa-map-marker-alt me-2"></i> PO Box 631546<br>Littleton, CO 80163</p>
+            <p><i class="fas fa-phone me-2"></i> Garrett: 303-888-5067<br>Greg: 720-514-1610</p>
+            <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@bbigdesigns.com" class="text-white">info@bbigdesigns.com</a></p>
+          </address>
+        </div>
+        <div class="col-md-4">
+          <h5>Shop & Inquire</h5>
+          <ul class="list-unstyled">
+            <li><a href="/shop/custom-golf-buckles" class="text-white">Custom Golf Buckles</a></li>
+            <li><a href="/shop/custom-buckle-packages" class="text-white">Custom Buckle Packages</a></li>
+            <li><a href="/shop/tournament-packages" class="text-white">Tournament Packages</a></li>
+            <li><a href="/shop/semi-custom-buckle-packages" class="text-white">Semi-Custom Buckle Packages</a></li>
+            <li><a href="/shop/semi-custom-bag-tags" class="text-white">Semi-Custom Bag Tags</a></li>
+            <li><a href="/shop/divot-repair-tools" class="text-white">Divot Repair Tools</a></li>
+            <li><a href="/shop/belts" class="text-white">Belts</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy;  BBIG Designs. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p><a href="/privacy-policy" class="text-white">Privacy Policy</a> | <a href="/terms-of-service" class="text-white">Terms of Service</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>

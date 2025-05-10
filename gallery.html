@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BBIG Designs - Handcrafted Belt Buckles | Gallery | Handcrafted Buckle Designs</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Header Partial -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="/img/placeholder-for-logo.png" alt="BBIG Designs Logo" height="40" class="me-2">
+          BBIG Designs
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+                aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link " href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/shop">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shop/cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>  
+  <!-- Flash Messages -->
+  <div class="container mt-3">
+    
+  </div>
+  
+  <!-- Main Content -->
+  <main>
+    <!-- Gallery Hero Section -->
+<section class="hero" style="background-image: url('/img/placeholder-for-gallery-hero.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center hero-content">
+        <h1 class="display-4 fw-bold mb-4">Our Gallery</h1>
+        <p class="lead">Explore our handcrafted belt buckles and custom designs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Category Navigation -->
+<section class="py-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="nav nav-pills justify-content-center" id="galleryFilter">
+          <li class="nav-item m-1">
+            <a class="nav-link active" href="#" data-filter="all">All Designs</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link" href="#" data-filter="golf">Golf Club Buckles</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link" href="#" data-filter="tournament">Tournament Buckles</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link" href="#" data-filter="corporate">Corporate Buckles</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link" href="#" data-filter="school">School & Team Buckles</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link" href="#" data-filter="personal">Personal Buckles</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link" href="#" data-filter="accessories">Accessories</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="py-5">
+  <div class="container">
+    <div class="row" id="galleryGrid">
+        <!-- Placeholder gallery items if no dynamic content yet -->
+        <!-- Golf Club Buckles -->
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="golf">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-1.jpg" class="card-img-top gallery-img" alt="Pebble Beach Golf Club Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Pebble Beach Golf Club</h5>
+              <p class="card-text">Custom logo buckle for Pebble Beach Golf Club in silver and enamel.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="golf">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-2.jpg" class="card-img-top gallery-img" alt="Augusta National Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Augusta National</h5>
+              <p class="card-text">Custom brass and enamel buckle featuring the iconic Augusta National logo.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tournament Buckles -->
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="tournament">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-3.jpg" class="card-img-top gallery-img" alt="2023 Charity Classic Buckle">
+            <div class="card-body">
+              <h5 class="card-title">2023 Charity Classic</h5>
+              <p class="card-text">Commemorative tournament buckle in silver with multi-color enamel details.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="tournament">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-4.jpg" class="card-img-top gallery-img" alt="Pro-Am Tournament Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Pro-Am Tournament</h5>
+              <p class="card-text">Special edition buckle created for participants in the annual Pro-Am event.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Corporate Buckles -->
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="corporate">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-5.jpg" class="card-img-top gallery-img" alt="Tech Company Logo Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Tech Company Logo</h5>
+              <p class="card-text">Corporate gift buckle featuring a technology company's logo in nickel and enamel.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="corporate">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-6.jpg" class="card-img-top gallery-img" alt="Brewery Logo Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Brewery Logo</h5>
+              <p class="card-text">Custom brass buckle for a craft brewery featuring their distinctive logo.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- School and Team Buckles -->
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="school">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-7.jpg" class="card-img-top gallery-img" alt="University Mascot Buckle">
+            <div class="card-body">
+              <h5 class="card-title">University Mascot</h5>
+              <p class="card-text">Collegiate buckle featuring university colors and mascot in detailed enamel work.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="school">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-8.jpg" class="card-img-top gallery-img" alt="High School Team Buckle">
+            <div class="card-body">
+              <h5 class="card-title">High School Team</h5>
+              <p class="card-text">Custom buckle created for a high school sports team with school colors and emblem.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Personal Buckles -->
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="personal">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-9.jpg" class="card-img-top gallery-img" alt="Monogram Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Monogram Design</h5>
+              <p class="card-text">Personalized monogram buckle in silver with intricate filigree detailing.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="personal">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-10.jpg" class="card-img-top gallery-img" alt="Family Crest Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Family Crest</h5>
+              <p class="card-text">Custom family crest reproduced in brass with multi-color enamel detail work.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Accessories -->
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="accessories">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-11.jpg" class="card-img-top gallery-img" alt="Custom Bag Tag">
+            <div class="card-body">
+              <h5 class="card-title">Custom Bag Tag</h5>
+              <p class="card-text">Golf bag tag with club logo in matching metals to complement buckle designs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4 gallery-item" data-category="accessories">
+          <div class="card h-100 border-0 shadow">
+            <img src="/img/placeholder-gallery-12.jpg" class="card-img-top gallery-img" alt="Divot Tool">
+            <div class="card-body">
+              <h5 class="card-title">Divot Repair Tool</h5>
+              <p class="card-text">Custom divot tool with magnetic ball marker featuring golf course logo.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <!-- Light Box Modal for Image Viewing -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="galleryModalLabel">Image Title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="" id="galleryModalImage" class="img-fluid" alt="Gallery Image">
+            <p id="galleryModalDescription" class="mt-3"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <a href="/shop" class="btn btn-primary">Shop Similar</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Request Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="display-6 fw-bold mb-3">Inspired by Our Gallery?</h2>
+        <p class="lead mb-0">Let us create a custom buckle just for you. We can replicate logos, designs, or create something completely unique.</p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Custom Design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for Gallery Filtering and Modal -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Gallery filtering
+    const filterButtons = document.querySelectorAll('#galleryFilter .nav-link');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    filterButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Update active class
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        
+        const filter = this.getAttribute('data-filter');
+        
+        galleryItems.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-category') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+    
+    // Gallery modal
+    const galleryModal = new bootstrap.Modal(document.getElementById('galleryModal'));
+    const galleryImages = document.querySelectorAll('.gallery-img');
+    const modalImage = document.getElementById('galleryModalImage');
+    const modalTitle = document.getElementById('galleryModalLabel');
+    const modalDescription = document.getElementById('galleryModalDescription');
+    
+    galleryImages.forEach(img => {
+      img.addEventListener('click', function() {
+        const card = this.closest('.card');
+        const title = card.querySelector('.card-title').textContent;
+        const description = card.querySelector('.card-text').textContent;
+        
+        modalImage.src = this.src;
+        modalImage.alt = this.alt;
+        modalTitle.textContent = title;
+        modalDescription.textContent = description;
+        
+        galleryModal.show();
+      });
+    });
+  });
+</script>
+  </main>
+  
+  <!-- Footer Partial -->
+  <footer class="bg-dark text-white py-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>BBIG Designs</h5>
+          <p>100% handcrafted belt buckles made in Colorado. Quality materials with unmatched craftsmanship.</p>
+          <p>
+            <a href="https://facebook.com" class="text-white me-2" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" class="text-white me-2" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://pinterest.com" class="text-white me-2" target="_blank"><i class="fab fa-pinterest-p"></i></a>
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <address>
+            <p><i class="fas fa-map-marker-alt me-2"></i> PO Box 631546<br>Littleton, CO 80163</p>
+            <p><i class="fas fa-phone me-2"></i> Garrett: 303-888-5067<br>Greg: 720-514-1610</p>
+            <p><i class="fas fa-envelope me-2"></i> <a href="mailto:info@bbigdesigns.com" class="text-white">info@bbigdesigns.com</a></p>
+          </address>
+        </div>
+        <div class="col-md-4">
+          <h5>Shop & Inquire</h5>
+          <ul class="list-unstyled">
+            <li><a href="/shop/custom-golf-buckles" class="text-white">Custom Golf Buckles</a></li>
+            <li><a href="/shop/custom-buckle-packages" class="text-white">Custom Buckle Packages</a></li>
+            <li><a href="/shop/tournament-packages" class="text-white">Tournament Packages</a></li>
+            <li><a href="/shop/semi-custom-buckle-packages" class="text-white">Semi-Custom Buckle Packages</a></li>
+            <li><a href="/shop/semi-custom-bag-tags" class="text-white">Semi-Custom Bag Tags</a></li>
+            <li><a href="/shop/divot-repair-tools" class="text-white">Divot Repair Tools</a></li>
+            <li><a href="/shop/belts" class="text-white">Belts</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy;  BBIG Designs. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <p><a href="/privacy-policy" class="text-white">Privacy Policy</a> | <a href="/terms-of-service" class="text-white">Terms of Service</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script src="/js/main.js"></script>
+</body>
+</html>
