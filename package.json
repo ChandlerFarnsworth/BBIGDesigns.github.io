@@ -4,9 +4,10 @@
     "description": "Website for BBIG Designs showcasing handcrafted belt buckles",
     "main": "app.js",
     "scripts": {
-      "start": "node app.js",
-      "dev": "nodemon app.js",
-      "test": "echo \"Error: no test specified\" && exit 1"
+        "start": "node app.js",
+        "dev": "nodemon app.js",
+        "build": "mkdir -p build && cp -R public/* build/ && node build-scripts/generate-static-html.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
     "keywords": [
       "belt buckles",

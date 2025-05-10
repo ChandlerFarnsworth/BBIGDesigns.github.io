@@ -14,7 +14,36 @@ const app = express();
 app.engine('handlebars', engine({
   defaultLayout: 'main',
   layoutsDir: path.join(__dirname, 'views/layouts'),
-  partialsDir: path.join(__dirname, 'views/partials')
+  partialsDir: path.join(__dirname, 'views/partials'),
+  helpers: {
+    // Custom Handlebars helpers
+    formatDate: function(date) {
+      return new Date(date).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    },
+    times: function(n, block) {
+      let accum = '';
+      for (let i = 0; i < n; ++i)
+        accum += block.fn(i);
+      return accum;
+    },
+    subtract: function(a, b) {
+      return a - b;
+    },
+    if_eq: function(a, b, opts) {
+      if (a === b) {
+        return opts.fn(this);
+      } else {
+        return opts.inverse(this);
+      }
+    },
+    currentYear: function() {
+      return new Date().getFullYear();
+    }
+  }
 }));
 app.set('view engine', 'handlebars');
 app.set('views', './views');
@@ -28,7 +57,7 @@ app.use(methodOverride('_method'));
 
 // Express session middleware
 app.use(session({
-  secret: 'bbig-secret-key',
+  secret: process.env.SESSION_SECRET || 'bbig-secret-key',
   resave: false,
   saveUninitialized: true
 }));
@@ -41,6 +70,7 @@ app.use((req, res, next) => {
   res.locals.success_msg = req.flash('success_msg');
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
+  res.locals.currentYear = new Date().getFullYear();
   next();
 });
 
