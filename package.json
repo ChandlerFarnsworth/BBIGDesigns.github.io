@@ -1,0 +1,33 @@
+{
+    "name": "bbig-designs-website",
+    "version": "1.0.0",
+    "description": "Website for BBIG Designs showcasing handcrafted belt buckles",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "dev": "nodemon app.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "belt buckles",
+      "handcrafted",
+      "BBIG Designs",
+      "custom buckles"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.18.2",
+      "express-handlebars": "^7.1.2",
+      "body-parser": "^1.20.2",
+      "dotenv": "^16.3.1",
+      "stripe": "^14.2.0",
+      "multer": "^1.4.5-lts.1",
+      "express-session": "^1.17.3",
+      "connect-flash": "^0.1.1",
+      "method-override": "^3.0.0"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.1"
+    }
+  }

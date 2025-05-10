@@ -1,0 +1,569 @@
+<!-- Breadcrumb Navigation -->
+<section class="py-3 bg-light">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/shop">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- Cart Header -->
+<section class="py-4">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold mb-md-0">Your Cart</h1>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a href="/shop" class="btn btn-outline-secondary"><i class="fas fa-arrow-left me-2"></i> Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Content -->
+<section class="py-4">
+  <div class="container">
+    {{#if cartItems}}
+      <!-- Cart Table for desktop and tablet -->
+      <div class="card shadow-sm mb-4 d-none d-md-block">
+        <div class="card-body p-0">
+          <table class="table table-hover mb-0">
+            <thead class="bg-light">
+              <tr>
+                <th scope="col" style="width: 15%;">Product</th>
+                <th scope="col" style="width: 40%;">Description</th>
+                <th scope="col" style="width: 15%;" class="text-center">Quantity</th>
+                <th scope="col" style="width: 15%;" class="text-end">Price</th>
+                <th scope="col" style="width: 15%;" class="text-end">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each cartItems}}
+                <tr>
+                  <td>
+                    <img src="{{this.image}}" alt="{{this.name}}" class="img-fluid rounded" style="max-width: 80px;">
+                  </td>
+                  <td>
+                    <h5 class="mb-1">{{this.name}}</h5>
+                    <p class="mb-1 text-muted small">{{this.options}}</p>
+                    <button class="btn btn-sm btn-link text-danger p-0 remove-item" data-id="{{this.id}}">
+                      <i class="fas fa-trash-alt me-1"></i> Remove
+                    </button>
+                  </td>
+                  <td class="text-center">
+                    <div class="quantity-control d-inline-flex">
+                      <button class="btn btn-sm btn-outline-secondary qty-decrease" data-id="{{this.id}}">-</button>
+                      <input type="number" class="form-control form-control-sm qty-input text-center mx-2" value="{{this.quantity}}" min="1" data-id="{{this.id}}" style="width: 50px;">
+                      <button class="btn btn-sm btn-outline-secondary qty-increase" data-id="{{this.id}}">+</button>
+                    </div>
+                  </td>
+                  <td class="text-end">${{this.price}}</td>
+                  <td class="text-end fw-bold">${{this.total}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Cart Cards for mobile -->
+      <div class="d-md-none">
+        {{#each cartItems}}
+          <div class="card shadow-sm mb-3">
+            <div class="card-body">
+              <div class="row align-items-center">
+                <div class="col-4">
+                  <img src="{{this.image}}" alt="{{this.name}}" class="img-fluid rounded">
+                </div>
+                <div class="col-8">
+                  <h5 class="mb-1">{{this.name}}</h5>
+                  <p class="mb-1 text-muted small">{{this.options}}</p>
+                  <p class="mb-1">Price: <span class="fw-bold">${{this.price}}</span></p>
+                  <div class="d-flex justify-content-between align-items-center mt-2">
+                    <div class="quantity-control d-inline-flex">
+                      <button class="btn btn-sm btn-outline-secondary qty-decrease" data-id="{{this.id}}">-</button>
+                      <input type="number" class="form-control form-control-sm qty-input text-center mx-1" value="{{this.quantity}}" min="1" data-id="{{this.id}}" style="width: 40px;">
+                      <button class="btn btn-sm btn-outline-secondary qty-increase" data-id="{{this.id}}">+</button>
+                    </div>
+                    <button class="btn btn-sm btn-link text-danger p-0 remove-item" data-id="{{this.id}}">
+                      <i class="fas fa-trash-alt"></i>
+                    </button>
+                  </div>
+                  <p class="mt-2 mb-0">Total: <span class="fw-bold">${{this.total}}</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+      
+      <!-- Order Summary and Checkout -->
+      <div class="row mt-4">
+        <div class="col-lg-8 mb-4 mb-lg-0">
+          <!-- Promo Code -->
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Have a promo code?</h5>
+              <div class="input-group">
+                <input type="text" class="form-control" id="promoCode" placeholder="Enter promo code">
+                <button class="btn btn-secondary" type="button" id="applyPromo">Apply</button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Special Instructions -->
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h5 class="card-title">Special Instructions</h5>
+              <textarea class="form-control" id="specialInstructions" rows="3" placeholder="Add any special instructions or notes about your order"></textarea>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-4">
+          <div class="card shadow-sm">
+            <div class="card-header bg-light">
+              <h5 class="mb-0">Order Summary</h5>
+            </div>
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal</span>
+                <span class="fw-bold" id="cartSubtotal">${{subtotal}}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Shipping</span>
+                <span id="shippingCost">
+                  {{#if freeShipping}}
+                    <span class="text-success">Free</span>
+                  {{else}}
+                    ${{shipping}}
+                  {{/if}}
+                </span>
+              </div>
+              {{#if discount}}
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Discount</span>
+                  <span class="text-success" id="discountAmount">-${{discount}}</span>
+                </div>
+              {{/if}}
+              {{#if tax}}
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Estimated Tax</span>
+                  <span id="taxAmount">${{tax}}</span>
+                </div>
+              {{/if}}
+              <hr>
+              <div class="d-flex justify-content-between mb-3">
+                <span class="fw-bold">Estimated Total</span>
+                <span class="fw-bold fs-5" id="orderTotal">${{total}}</span>
+              </div>
+              <div class="d-grid gap-2">
+                <a href="/checkout" class="btn btn-primary btn-lg">Proceed to Checkout</a>
+                <a href="/shop" class="btn btn-outline-secondary">Continue Shopping</a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Secure Checkout Info -->
+          <div class="card shadow-sm mt-3">
+            <div class="card-body">
+              <h5 class="card-title">Secure Checkout</h5>
+              <p class="card-text small mb-2">We use secure payment processing by Stripe.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <i class="fab fa-cc-visa fa-2x me-2 text-secondary"></i>
+                  <i class="fab fa-cc-mastercard fa-2x me-2 text-secondary"></i>
+                  <i class="fab fa-cc-amex fa-2x me-2 text-secondary"></i>
+                  <i class="fab fa-cc-discover fa-2x text-secondary"></i>
+                </div>
+                <div>
+                  <i class="fas fa-lock fa-2x text-success"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <!-- Empty Cart State -->
+      <div class="text-center py-5">
+        <i class="fas fa-shopping-cart fa-5x text-secondary mb-4"></i>
+        <h2 class="fw-bold mb-3">Your Cart is Empty</h2>
+        <p class="lead mb-4">Looks like you haven't added any products to your cart yet.</p>
+        <a href="/shop" class="btn btn-primary btn-lg">Start Shopping</a>
+      </div>
+      
+      <!-- Featured Products -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4">You Might Be Interested In</h3>
+        <div class="row">
+          {{#each featuredProducts}}
+            <div class="col-md-3 mb-4">
+              <div class="card product-card h-100">
+                <img src="{{this.image}}" class="card-img-top product-img" alt="{{this.name}}">
+                <div class="card-body">
+                  <h5 class="card-title">{{this.name}}</h5>
+                  <p class="card-text">{{this.shortDescription}}</p>
+                  {{#if this.price}}
+                    <p class="card-text text-secondary fw-bold">${{this.price}}</p>
+                  {{else}}
+                    <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+                  {{/if}}
+                  <a href="/shop/product/{{this.id}}" class="btn btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          {{else}}
+            <!-- Placeholder featured products if no dynamic content yet -->
+            <div class="col-md-3 mb-4">
+              <div class="card product-card h-100">
+                <img src="/img/placeholder-product-1.jpg" class="card-img-top product-img" alt="Custom Golf Buckle">
+                <div class="card-body">
+                  <h5 class="card-title">Custom Golf Buckle</h5>
+                  <p class="card-text">Handcrafted golf club logo buckle with premium metals.</p>
+                  <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+                  <a href="/shop/product/1" class="btn btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card product-card h-100">
+                <img src="/img/placeholder-product-3.jpg" class="card-img-top product-img" alt="Semi-Custom Buckle">
+                <div class="card-body">
+                  <h5 class="card-title">Semi-Custom Buckle</h5>
+                  <p class="card-text">Select from our designs and add your personalization.</p>
+                  <p class="card-text text-secondary fw-bold">$119.99</p>
+                  <a href="/shop/product/3" class="btn btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card product-card h-100">
+                <img src="/img/placeholder-product-6.jpg" class="card-img-top product-img" alt="Premium Belt">
+                <div class="card-body">
+                  <h5 class="card-title">Premium Belt</h5>
+                  <p class="card-text">High-quality leather belt to complement your buckle.</p>
+                  <p class="card-text text-secondary fw-bold">$49.99</p>
+                  <a href="/shop/product/6" class="btn btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 mb-4">
+              <div class="card product-card h-100">
+                <img src="/img/placeholder-product-8.jpg" class="card-img-top product-img" alt="Gift Package">
+                <div class="card-body">
+                  <h5 class="card-title">Gift Package</h5>
+                  <p class="card-text">Complete gift set with buckle, belt, and accessories.</p>
+                  <p class="card-text text-secondary fw-bold">$179.99</p>
+                  <a href="/shop/product/8" class="btn btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    {{/if}}
+  </div>
+</section>
+
+<!-- Recently Viewed Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h3 class="text-center mb-4">Recently Viewed</h3>
+    <div class="row">
+      {{#each recentlyViewed}}
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="{{this.image}}" class="card-img-top product-img" alt="{{this.name}}">
+            <div class="card-body">
+              <h5 class="card-title">{{this.name}}</h5>
+              <p class="card-text">{{this.shortDescription}}</p>
+              {{#if this.price}}
+                <p class="card-text text-secondary fw-bold">${{this.price}}</p>
+              {{else}}
+                <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              {{/if}}
+              <a href="/shop/product/{{this.id}}" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+      {{else}}
+        <!-- Placeholder recently viewed products if no dynamic content yet -->
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-4.jpg" class="card-img-top product-img" alt="Custom Bag Tag">
+            <div class="card-body">
+              <h5 class="card-title">Custom Bag Tag</h5>
+              <p class="card-text">Personalized metal bag tags for golf clubs and events.</p>
+              <p class="card-text text-secondary fw-bold">$29.99</p>
+              <a href="/shop/product/4" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-5.jpg" class="card-img-top product-img" alt="Divot Tool">
+            <div class="card-body">
+              <h5 class="card-title">Divot Repair Tool</h5>
+              <p class="card-text">Custom metal divot repair tool with magnetic ball marker.</p>
+              <p class="card-text text-secondary fw-bold">$24.99</p>
+              <a href="/shop/product/5" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-7.jpg" class="card-img-top product-img" alt="Challenge Coin">
+            <div class="card-body">
+              <h5 class="card-title">Challenge Coin</h5>
+              <p class="card-text">Custom metal challenge coins for events and fundraisers.</p>
+              <p class="card-text text-secondary fw-bold">$19.99</p>
+              <a href="/shop/product/7" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-2.jpg" class="card-img-top product-img" alt="Tournament Package">
+            <div class="card-body">
+              <h5 class="card-title">Tournament Package</h5>
+              <p class="card-text">Custom buckles for your golf tournament with your event logo.</p>
+              <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              <a href="/shop/product/2" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+
+<!-- Cart JavaScript -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Quantity controls
+    const qtyDecreaseButtons = document.querySelectorAll('.qty-decrease');
+    const qtyIncreaseButtons = document.querySelectorAll('.qty-increase');
+    const qtyInputs = document.querySelectorAll('.qty-input');
+    const removeButtons = document.querySelectorAll('.remove-item');
+    
+    // Decrease quantity
+    qtyDecreaseButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const inputElement = document.querySelector(`.qty-input[data-id="${id}"]`);
+        let currentValue = parseInt(inputElement.value);
+        
+        if (currentValue > 1) {
+          currentValue--;
+          inputElement.value = currentValue;
+          updateCartItem(id, currentValue);
+        }
+      });
+    });
+    
+    // Increase quantity
+    qtyIncreaseButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const inputElement = document.querySelector(`.qty-input[data-id="${id}"]`);
+        let currentValue = parseInt(inputElement.value);
+        
+        currentValue++;
+        inputElement.value = currentValue;
+        updateCartItem(id, currentValue);
+      });
+    });
+    
+    // Input quantity change
+    qtyInputs.forEach(input => {
+      input.addEventListener('change', function() {
+        const id = this.getAttribute('data-id');
+        let currentValue = parseInt(this.value);
+        
+        if (isNaN(currentValue) || currentValue < 1) {
+          currentValue = 1;
+          this.value = 1;
+        }
+        
+        updateCartItem(id, currentValue);
+      });
+    });
+    
+    // Remove item
+    removeButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        removeCartItem(id);
+      });
+    });
+    
+    // Apply promo code
+    const applyPromoButton = document.getElementById('applyPromo');
+    if (applyPromoButton) {
+      applyPromoButton.addEventListener('click', function() {
+        const promoCode = document.getElementById('promoCode').value.trim();
+        
+        if (promoCode) {
+          // In a real implementation, you'd verify the promo code via AJAX
+          // For now, we'll simulate a successful promo code application
+          
+          // Show a success message
+          const promoInput = document.getElementById('promoCode');
+          promoInput.parentElement.innerHTML = `
+            <div class="alert alert-success mb-0">
+              <i class="fas fa-check-circle me-2"></i> Promo code "${promoCode}" applied successfully! 10% discount added.
+            </div>
+          `;
+          
+          // Update order summary with discount
+          const subtotalElement = document.getElementById('cartSubtotal');
+          const totalElement = document.getElementById('orderTotal');
+          
+          if (subtotalElement && totalElement) {
+            const subtotal = parseFloat(subtotalElement.textContent.replace(', ''));
+            const discount = subtotal * 0.1;
+            
+            // Add discount line if it doesn't exist
+            const orderSummary = totalElement.closest('.card-body');
+            if (orderSummary && !document.getElementById('discountAmount')) {
+              const discountHTML = `
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Discount</span>
+                  <span class="text-success" id="discountAmount">-${discount.toFixed(2)}</span>
+                </div>
+              `;
+              
+              // Insert the discount before the horizontal rule
+              const hr = orderSummary.querySelector('hr');
+              if (hr) {
+                hr.insertAdjacentHTML('beforebegin', discountHTML);
+              }
+            } else if (document.getElementById('discountAmount')) {
+              document.getElementById('discountAmount').textContent = `-${discount.toFixed(2)}`;
+            }
+            
+            // Update total
+            const newTotal = subtotal - discount + 
+              (document.getElementById('shippingCost') && document.getElementById('shippingCost').textContent !== 'Free' ? 
+                parseFloat(document.getElementById('shippingCost').textContent.replace(', '')) : 0) +
+              (document.getElementById('taxAmount') ? 
+                parseFloat(document.getElementById('taxAmount').textContent.replace(', '')) : 0);
+            
+            totalElement.textContent = `${newTotal.toFixed(2)}`;
+          }
+        }
+      });
+    }
+    
+    // Function to update cart item (simulated)
+    function updateCartItem(id, quantity) {
+      // In a real implementation, you'd send an AJAX request to update the cart
+      console.log(`Update item ${id} to quantity ${quantity}`);
+      
+      // Simulate updating the item total and cart totals
+      const itemRow = document.querySelector(`tr:has(button[data-id="${id}"]), .card:has(button[data-id="${id}"])`);
+      
+      if (itemRow) {
+        const priceElement = itemRow.querySelector('td:nth-child(4), p:contains("Price:")');
+        const totalElement = itemRow.querySelector('td:nth-child(5), p:contains("Total:")');
+        
+        if (priceElement && totalElement) {
+          const price = parseFloat(priceElement.textContent.replace(', ''));
+          const newTotal = price * quantity;
+          
+          // Update the item total
+          totalElement.textContent = `${newTotal.toFixed(2)}`;
+          
+          // Update cart totals
+          updateCartTotals();
+        }
+      }
+    }
+    
+    // Function to remove cart item (simulated)
+    function removeCartItem(id) {
+      // In a real implementation, you'd send an AJAX request to remove the item
+      console.log(`Remove item ${id}`);
+      
+      // Simulate removing the item from the DOM
+      const itemRowDesktop = document.querySelector(`tr:has(button[data-id="${id}"])`);
+      const itemCardMobile = document.querySelector(`.card:has(button[data-id="${id}"])`);
+      
+      if (itemRowDesktop) {
+        itemRowDesktop.remove();
+      }
+      
+      if (itemCardMobile) {
+        itemCardMobile.remove();
+      }
+      
+      // Update cart totals
+      updateCartTotals();
+      
+      // Check if cart is now empty
+      const remainingItems = document.querySelectorAll('tr:has(.remove-item), .card:has(.remove-item)');
+      
+      if (remainingItems.length === 0) {
+        // Reload page to show empty cart state
+        window.location.reload();
+      }
+    }
+    
+    // Function to update cart totals (simulated)
+    function updateCartTotals() {
+      // Calculate new subtotal from visible items
+      let subtotal = 0;
+      
+      // Get all item totals from desktop view
+      document.querySelectorAll('tr td:nth-child(5)').forEach(element => {
+        subtotal += parseFloat(element.textContent.replace(', ''));
+      });
+      
+      // If no desktop items, try mobile view
+      if (subtotal === 0) {
+        document.querySelectorAll('.card p:contains("Total:")').forEach(element => {
+          subtotal += parseFloat(element.textContent.replace('Total: , ''));
+        });
+      }
+      
+      // Update subtotal
+      const subtotalElement = document.getElementById('cartSubtotal');
+      if (subtotalElement) {
+        subtotalElement.textContent = `${subtotal.toFixed(2)}`;
+      }
+      
+      // Calculate other components
+      const shipping = document.getElementById('shippingCost') && 
+        document.getElementById('shippingCost').textContent !== 'Free' ? 
+        parseFloat(document.getElementById('shippingCost').textContent.replace(', '')) : 0;
+      
+      const discount = document.getElementById('discountAmount') ? 
+        parseFloat(document.getElementById('discountAmount').textContent.replace('-, '')) : 0;
+      
+      const tax = document.getElementById('taxAmount') ? 
+        parseFloat(document.getElementById('taxAmount').textContent.replace(', '')) : 0;
+      
+      // Update total
+      const total = subtotal + shipping - discount + tax;
+      const totalElement = document.getElementById('orderTotal');
+      
+      if (totalElement) {
+        totalElement.textContent = `${total.toFixed(2)}`;
+      }
+      
+      // Update shipping (free for orders over $100)
+      const shippingElement = document.getElementById('shippingCost');
+      if (shippingElement && subtotal >= 100) {
+        shippingElement.innerHTML = '<span class="text-success">Free</span>';
+      } else if (shippingElement && subtotal < 100) {
+        shippingElement.textContent = '$9.95';
+      }
+    }
+  });
+</script>

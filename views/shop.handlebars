@@ -1,0 +1,324 @@
+<!-- Shop Hero Section -->
+<section class="hero" style="background-image: url('/img/placeholder-for-shop-hero.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center hero-content">
+        <h1 class="display-4 fw-bold mb-4">Shop Our Collection</h1>
+        <p class="lead">Browse our handcrafted buckles and accessories</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Category Navigation -->
+<section class="py-4 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul class="nav nav-pills justify-content-center">
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isAllProducts}}active{{/if}}" href="/shop">All Products</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isCustomGolfBuckles}}active{{/if}}" href="/shop/custom-golf-buckles">Custom Golf Buckles</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isCustomBucklePackages}}active{{/if}}" href="/shop/custom-buckle-packages">Custom Buckle Packages</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isTournamentPackages}}active{{/if}}" href="/shop/tournament-packages">Tournament Packages</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isSemiCustomBucklePackages}}active{{/if}}" href="/shop/semi-custom-buckle-packages">Semi-Custom Packages</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isBagTags}}active{{/if}}" href="/shop/semi-custom-bag-tags">Bag Tags</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isDivotTools}}active{{/if}}" href="/shop/divot-repair-tools">Divot Tools</a>
+          </li>
+          <li class="nav-item m-1">
+            <a class="nav-link {{#if isBelts}}active{{/if}}" href="/shop/belts">Belts</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Filter and Sort -->
+<section class="py-3">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2>{{categoryTitle}}</h2>
+        <p>{{categoryDescription}}</p>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex justify-content-md-end">
+          <div class="me-3">
+            <select class="form-select" id="sortOptions">
+              <option selected>Sort By</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="popular">Most Popular</option>
+            </select>
+          </div>
+          <div>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-outline-secondary active" id="gridView"><i class="fas fa-th"></i></button>
+              <button type="button" class="btn btn-outline-secondary" id="listView"><i class="fas fa-list"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<section class="py-5">
+  <div class="container">
+    <div class="row" id="productsGrid">
+      {{#each products}}
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="{{this.image}}" class="card-img-top product-img" alt="{{this.name}}">
+            <div class="card-body">
+              <h5 class="card-title">{{this.name}}</h5>
+              <p class="card-text">{{this.shortDescription}}</p>
+              {{#if this.price}}
+                <p class="card-text text-secondary fw-bold">${{this.price}}</p>
+              {{else}}
+                <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              {{/if}}
+              <a href="/shop/product/{{this.id}}" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+      {{else}}
+        <!-- Placeholder products if no dynamic content yet -->
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-1.jpg" class="card-img-top product-img" alt="Custom Golf Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Custom Golf Buckle</h5>
+              <p class="card-text">Handcrafted golf club logo buckle with premium metals.</p>
+              <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              <a href="/shop/product/1" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-2.jpg" class="card-img-top product-img" alt="Tournament Package">
+            <div class="card-body">
+              <h5 class="card-title">Tournament Package</h5>
+              <p class="card-text">Custom buckles for your golf tournament with your event logo.</p>
+              <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+              <a href="/shop/product/2" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-3.jpg" class="card-img-top product-img" alt="Semi-Custom Buckle">
+            <div class="card-body">
+              <h5 class="card-title">Semi-Custom Buckle</h5>
+              <p class="card-text">Select from our designs and add your personalization.</p>
+              <p class="card-text text-secondary fw-bold">$119.99</p>
+              <a href="/shop/product/3" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-4.jpg" class="card-img-top product-img" alt="Bag Tag">
+            <div class="card-body">
+              <h5 class="card-title">Custom Bag Tag</h5>
+              <p class="card-text">Personalized metal bag tags for golf clubs and events.</p>
+              <p class="card-text text-secondary fw-bold">$29.99</p>
+              <a href="/shop/product/4" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-5.jpg" class="card-img-top product-img" alt="Divot Tool">
+            <div class="card-body">
+              <h5 class="card-title">Divot Repair Tool</h5>
+              <p class="card-text">Custom metal divot repair tool with magnetic ball marker.</p>
+              <p class="card-text text-secondary fw-bold">$24.99</p>
+              <a href="/shop/product/5" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-6.jpg" class="card-img-top product-img" alt="Premium Belt">
+            <div class="card-body">
+              <h5 class="card-title">Premium Belt</h5>
+              <p class="card-text">High-quality leather belt to complement your handcrafted buckle.</p>
+              <p class="card-text text-secondary fw-bold">$49.99</p>
+              <a href="/shop/product/6" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-7.jpg" class="card-img-top product-img" alt="Challenge Coin">
+            <div class="card-body">
+              <h5 class="card-title">Challenge Coin</h5>
+              <p class="card-text">Custom metal challenge coins for events and fundraisers.</p>
+              <p class="card-text text-secondary fw-bold">$19.99</p>
+              <a href="/shop/product/7" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card product-card h-100">
+            <img src="/img/placeholder-product-8.jpg" class="card-img-top product-img" alt="Gift Package">
+            <div class="card-body">
+              <h5 class="card-title">Gift Package</h5>
+              <p class="card-text">Complete gift set with buckle, belt, and accessories.</p>
+              <p class="card-text text-secondary fw-bold">$179.99</p>
+              <a href="/shop/product/8" class="btn btn-outline-dark">View Details</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    
+    <!-- List View (Hidden by Default) -->
+    <div class="row d-none" id="productsList">
+      {{#each products}}
+        <div class="col-12 mb-4">
+          <div class="card product-list-card">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="{{this.image}}" class="img-fluid rounded-start h-100 product-list-img" alt="{{this.name}}">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">{{this.name}}</h4>
+                  <p class="card-text">{{this.description}}</p>
+                  {{#if this.price}}
+                    <p class="card-text text-secondary fw-bold">${{this.price}}</p>
+                  {{else}}
+                    <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+                  {{/if}}
+                  <a href="/shop/product/{{this.id}}" class="btn btn-outline-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{else}}
+        <!-- Placeholder for list view if no dynamic content yet -->
+        <div class="col-12 mb-4">
+          <div class="card product-list-card">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="/img/placeholder-product-1.jpg" class="img-fluid rounded-start h-100 product-list-img" alt="Custom Golf Buckle">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Custom Golf Buckle</h4>
+                  <p class="card-text">Handcrafted golf club logo buckle with premium metals and exceptional detail. Each buckle is custom made to your specifications and features your club or organization logo.</p>
+                  <p class="card-text text-secondary fw-bold">Contact for pricing</p>
+                  <a href="/shop/product/1" class="btn btn-outline-dark">View Details</a>
+                  <a href="/contact" class="btn btn-secondary ms-2">Request Quote</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mb-4">
+          <div class="card product-list-card">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="/img/placeholder-product-3.jpg" class="img-fluid rounded-start h-100 product-list-img" alt="Semi-Custom Buckle">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h4 class="card-title">Semi-Custom Buckle</h4>
+                  <p class="card-text">Select from our designs and add your personalization. These buckles offer a more affordable option while still maintaining our signature quality and craftsmanship.</p>
+                  <p class="card-text text-secondary fw-bold">$119.99</p>
+                  <a href="/shop/product/3" class="btn btn-outline-dark">View Details</a>
+                  <a href="/shop/cart/add/3" class="btn btn-primary ms-2">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    
+    <!-- Pagination -->
+    <div class="row mt-4">
+      <div class="col-12">
+        <nav aria-label="Product navigation">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Custom Order CTA -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h2 class="display-6 fw-bold mb-3">Looking for Something Custom?</h2>
+        <p class="lead mb-0">We specialize in completely custom designs. Contact us to discuss your vision for a one-of-a-kind belt buckle.</p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <a href="/contact" class="btn btn-primary btn-lg">Request a Custom Design</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for View Switching -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Grid and List view toggle
+    const gridView = document.getElementById('gridView');
+    const listView = document.getElementById('listView');
+    const productsGrid = document.getElementById('productsGrid');
+    const productsList = document.getElementById('productsList');
+    
+    gridView.addEventListener('click', function() {
+      productsGrid.classList.remove('d-none');
+      productsList.classList.add('d-none');
+      gridView.classList.add('active');
+      listView.classList.remove('active');
+    });
+    
+    listView.addEventListener('click', function() {
+      productsGrid.classList.add('d-none');
+      productsList.classList.remove('d-none');
+      gridView.classList.remove('active');
+      listView.classList.add('active');
+    });
+    
+    // Sort functionality would be implemented with AJAX to fetch sorted products
+    const sortOptions = document.getElementById('sortOptions');
+    sortOptions.addEventListener('change', function() {
+      // AJAX request would go here
+      console.log('Sort by: ' + this.value);
+    });
+  });
+</script>

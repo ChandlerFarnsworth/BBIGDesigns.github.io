@@ -1,0 +1,39 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <img src="/img/placeholder-for-logo.png" alt="BBIG Designs Logo" height="40" class="me-2">
+        BBIG Designs
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" 
+              aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link {{#if isHome}}active{{/if}}" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if isAbout}}active{{/if}}" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if isShop}}active{{/if}}" href="/shop">Shop</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if isGallery}}active{{/if}}" href="/gallery">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{#if isContact}}active{{/if}}" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/shop/cart">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

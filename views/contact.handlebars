@@ -1,0 +1,311 @@
+<!-- Contact Hero Section -->
+<section class="hero" style="background-image: url('/img/placeholder-for-contact-hero.jpg');">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center hero-content">
+        <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
+        <p class="lead">Get in touch with our team to discuss your custom buckle design</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Info and Form -->
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h2 class="card-title fw-bold mb-4">Get In Touch</h2>
+            
+            <h5 class="mb-3"><i class="fas fa-phone me-2 text-secondary"></i> Phone</h5>
+            <p class="mb-4">
+              Garrett Farnsworth: <a href="tel:3038885067" class="text-decoration-none">303-888-5067</a><br>
+              Greg Gibb: <a href="tel:7205141610" class="text-decoration-none">720-514-1610</a>
+            </p>
+            
+            <h5 class="mb-3"><i class="fas fa-envelope me-2 text-secondary"></i> Email</h5>
+            <p class="mb-4">
+              <a href="mailto:info@bbigdesigns.com" class="text-decoration-none">info@bbigdesigns.com</a>
+            </p>
+            
+            <h5 class="mb-3"><i class="fas fa-map-marker-alt me-2 text-secondary"></i> Mail</h5>
+            <address class="mb-4">
+              BBIG Designs<br>
+              PO Box 631546<br>
+              Littleton, CO 80163
+            </address>
+            
+            <h5 class="mb-3"><i class="far fa-clock me-2 text-secondary"></i> Business Hours</h5>
+            <p class="mb-4">
+              Monday - Friday: 9:00 AM - 5:00 PM<br>
+              Saturday - Sunday: Closed
+            </p>
+            
+            <h5 class="mb-3"><i class="fas fa-share-alt me-2 text-secondary"></i> Social</h5>
+            <div class="social-icons">
+              <a href="https://facebook.com" class="me-3 text-secondary" target="_blank"><i class="fab fa-facebook-f fa-lg"></i></a>
+              <a href="https://instagram.com" class="me-3 text-secondary" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+              <a href="https://pinterest.com" class="me-3 text-secondary" target="_blank"><i class="fab fa-pinterest-p fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-8">
+        <div class="card border-0 shadow">
+          <div class="card-body">
+            <h2 class="card-title fw-bold mb-4">Send Us a Message</h2>
+            <p class="mb-4">Fill out the form below to contact us about custom buckles, orders, or any questions you might have.</p>
+            
+            <form id="contactForm" action="/contact/submit" method="POST">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Your Name *</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email Address *</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone" name="phone">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="subject" class="form-label">Subject *</label>
+                  <select class="form-select" id="subject" name="subject" required>
+                    <option value="" selected disabled>Select a subject</option>
+                    <option value="Custom Buckle Inquiry">Custom Buckle Inquiry</option>
+                    <option value="Tournament Package">Tournament Package</option>
+                    <option value="Corporate Order">Corporate Order</option>
+                    <option value="Product Question">Product Question</option>
+                    <option value="Order Status">Order Status</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label for="message" class="form-label">Message *</label>
+                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+              </div>
+              
+              <div class="mb-3">
+                <label for="fileUpload" class="form-label">Attach Logo or Design (Optional)</label>
+                <input class="form-control" type="file" id="fileUpload" name="fileUpload">
+                <div class="form-text">Max file size: 5MB. Supported formats: JPG, PNG, PDF, AI</div>
+              </div>
+              
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="newsletter" name="newsletter">
+                <label class="form-check-label" for="newsletter">Subscribe to our newsletter for updates and special offers</label>
+              </div>
+              
+              <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="display-5 fw-bold">Frequently Asked Questions</h2>
+        <p class="lead">Find quick answers to common questions</p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                How long does it take to make a custom belt buckle?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>The production time for a custom belt buckle typically ranges from 3-4 weeks from approval of the design. This timeline allows for our meticulous handcrafting process. Rush orders may be available in certain circumstances - please contact us to discuss your specific timeline needs.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Is there a minimum order quantity?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>No, there is no minimum order quantity. Since each of our buckles is 100% cut by hand, we can create a single custom buckle or hundreds for your event or organization. This is one of the advantages of our handcrafted approach versus mass production methods.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                What information do you need to provide a quote?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>To provide an accurate quote, we need to know the following:</p>
+                <ul>
+                  <li>The design/logo you want to use (a digital file is ideal)</li>
+                  <li>The metals and colors you're interested in</li>
+                  <li>The quantity needed</li>
+                  <li>Your timeline for delivery</li>
+                </ul>
+                <p>The more detail you can provide, the more accurate our quote will be. Don't worry if you don't have all these details yet - we can help guide you through the process.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Do you offer a warranty on your buckles?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Yes, all of our buckles come with a lifetime guarantee. We stand behind the quality of our craftsmanship and materials. If there is ever a problem with your buckle that is related to craftsmanship or materials, we will repair or replace it at no charge.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                Can you match specific pantone colors or specific design elements?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Yes, we can match specific pantone colors in our enamel work. Our artists are skilled at color matching and can replicate your brand colors with amazing accuracy. We can also replicate detailed design elements, logos, and graphics. Just provide us with your design specifications, and we'll work to create an exact representation in buckle form.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                Do you ship internationally?
+              </button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                <p>Yes, we ship worldwide. International shipping rates and delivery times vary by destination. Please contact us for specific shipping information for your location. We work with reliable shipping partners to ensure your buckles arrive safely, no matter where you are.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Map and Directions -->
+<section class="py-5">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-12 text-center">
+        <h2 class="display-5 fw-bold">Our Location</h2>
+        <p class="lead">BBIG Designs is proudly based in Littleton, Colorado</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-12">
+        <div class="ratio ratio-21x9 mb-4">
+          <!-- Placeholder for a Google Map iframe -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98168.47594865284!2d-105.07087011525815!3d39.59993731660386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876c7e79b3a1ac77%3A0x1e078706e551c29!2sLittleton%2C%20CO!5e0!3m2!1sen!2sus!4v1683561000000!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="card border-0 shadow">
+          <div class="card-body">
+            <h4 class="card-title fw-bold">Visit By Appointment</h4>
+            <p>While we primarily operate through our online store and by mail, we do offer in-person consultations by appointment for clients in the Denver metropolitan area. Please contact us to schedule a visit to see our work and discuss your custom buckle design in person.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Validation Script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contactForm');
+    
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Basic form validation
+      let isValid = true;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+      
+      // Reset any previous error states
+      [name, email, subject, message].forEach(field => {
+        field.classList.remove('is-invalid');
+      });
+      
+      // Simple validation
+      if (!name.value.trim()) {
+        name.classList.add('is-invalid');
+        isValid = false;
+      }
+      
+      if (!email.value.trim() || !isValidEmail(email.value)) {
+        email.classList.add('is-invalid');
+        isValid = false;
+      }
+      
+      if (!subject.value) {
+        subject.classList.add('is-invalid');
+        isValid = false;
+      }
+      
+      if (!message.value.trim()) {
+        message.classList.add('is-invalid');
+        isValid = false;
+      }
+      
+      if (isValid) {
+        // In a real implementation, you'd use AJAX here to submit the form
+        // For now, let's simulate submission with a success message
+        contactForm.innerHTML = `
+          <div class="alert alert-success text-center py-5" role="alert">
+            <i class="fas fa-check-circle fa-3x mb-3"></i>
+            <h4 class="alert-heading">Message Sent!</h4>
+            <p>Thank you for contacting BBIG Designs. We've received your message and will respond within 1-2 business days.</p>
+          </div>
+        `;
+        
+        // In a real implementation, you'd submit the form data to your server here
+        // This is where you'd typically use AJAX or fetch
+      }
+    });
+    
+    // Email validation helper function
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  });
+</script>
